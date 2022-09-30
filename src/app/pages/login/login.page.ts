@@ -37,6 +37,7 @@ export class LoginPage implements OnInit {
       if(this.usuario.username==this.registrado.username && this.usuario.password==this.registrado.password)
       {
         console.log("Puede pasar");
+        await this.storage.set('session',this.registrado.username);
         this.router.navigate(['/home']);
       }
       else{

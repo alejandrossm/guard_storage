@@ -18,7 +18,7 @@ export class RegistroPage implements OnInit {
   }
   constructor(private storage: Storage, private router:Router) { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
 
