@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { Category } from 'src/app/interfaces/comidas';
 import { ComidasService } from '../../services/comidas.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { ComidasService } from '../../services/comidas.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+
+categorias:Category[]=[];
 
   constructor(
     private st:Storage, 
@@ -26,7 +29,13 @@ export class HomePage implements OnInit {
     
     this.srvComida.getListaComidas().subscribe(datos=>
       {
-        console.log(datos);
+        //console.log(datos.categories);
+        this.categorias.push(...datos.categories);
+
+        console.log(this.categorias);
+
+        
+
       });
   }
 

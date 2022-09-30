@@ -14,4 +14,10 @@
   <ion-text color="tertiary" class="ion-text-center">
     <h1>Bienvenido</h1>
   </ion-text>
+
+  <ion-list *ngFor="let category of categorias" >
+    <ion-item>
+      <ion-label>{{category.strCategory}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
